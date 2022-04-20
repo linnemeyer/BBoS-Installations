@@ -1,0 +1,267 @@
+
+
+bb_audits
+  audit_id                       number(22,0)  /nn
+  user_name                      varchar2(50) 
+  change_time                    date 
+  table_name                     varchar2(50) 
+  action                         varchar2(10) 
+  primary_key                    number(22,0) 
+  primary_key_two                number(22,0) 
+  primary_key_three              number(22,0) 
+
+bb_calendar_events
+  event_id                       number(22,0)  /nn
+  event_text                     varchar2(400)  /nn
+  event_date                     date 
+  event_minutes                  number(22,0) 
+  created_on                     date 
+  updated_on                     date 
+
+bb_delivery_locations
+  location_id                    number(22,0)  /nn
+  location                       varchar2(20) 
+
+bb_files
+  file_id                        number(22,0) 
+  file_name                      varchar2(400) 
+  file_mimetype                  varchar2(255) 
+  file_size                      number(22,0) 
+  file_date                      date 
+  blob_content                   blob 
+
+bb_installers
+  installer_id                   number(22,0)  /nn
+  installer                      varchar2(30) 
+  calendar_css                   varchar2(20) 
+  inactive                       char(1) 
+
+bb_install_events
+  event_id                       number(22,0) 
+  event_description              varchar2(2000) 
+  install_start_date             date 
+  install_end_date               date 
+  actual_install_date            date 
+  order_id                       number(22,0) 
+  territory_id                   number(22,0) 
+  installer_id                   number(22,0) 
+  balance_due                    number(22,0) 
+
+bb_orders
+  order_id                       number(22,0)  /nn
+  initial_or_followup            varchar2(3)  /nn
+  client_name                    varchar2(40)  /nn
+  order_date                     date 
+  parent_order_id                number(22,0) 
+  territory_id                   number(22,0)  /nn
+  created_on                     date 
+  updated_on                     date 
+  client_phone                   varchar2(15) 
+  client_address                 varchar2(50) 
+  client_city                    varchar2(25) 
+  client_state                   varchar2(2) 
+  client_zip                     varchar2(10) 
+  balance_due                    number(22,0)  /nn
+  hold_date                      date 
+  tpt_account_number             number(22,0) 
+  tpt_order_number               number(22,0) 
+  process_status                 varchar2(16) 
+  client_email                   varchar2(50) 
+  gate_code                      varchar2(10) 
+  sales_person                   varchar2(50) 
+  lat                            number(22,0) 
+  lng                            number(22,0) 
+  geometry                       sdo_geometry(1) 
+
+bb_territories
+  territory_id                   number(22,0)  /nn
+  territory_name                 varchar2(50) 
+
+bb_users
+  user_id                        number(22,0)  /nn
+  user_name                      varchar2(50) 
+  password                       varchar2(50) 
+  access_eff_date                date 
+  access_term_date               date 
+  first_name                     varchar2(20) 
+  last_name                      varchar2(20) 
+  email                          varchar2(30) 
+  user_role                      varchar2(15) 
+
+bb_vendors
+  vendor_id                      number(22,0)  /nn
+  vendor_name                    varchar2(30)  /nn
+  url                            varchar2(128) 
+
+bb_audit_columns
+  audit_column_id                number(22,0)  /nn
+  audit_id                       number(22,0)  /fk BB_AUDITS /nn
+  column_name                    varchar2(50) 
+  old_date_value                 date 
+  new_date_value                 date 
+  old_num_value                  number(22,0) 
+  new_num_value                  number(22,0) 
+  old_char_value                 varchar2(2000) 
+  new_char_value                 varchar2(2000) 
+
+bb_commo_log
+  log_id                         number(22,0) 
+  order_id                       number(22,0)  /fk BB_ORDERS
+  user_id                        number(22,0)  /fk BB_USERS
+  log_date                       timestamp(6) with local time zone(11) 
+  log_entry                      varchar2(500) 
+  created_on                     timestamp(6) with local time zone(11) 
+  updated_on                     timestamp(6) with local time zone(11) 
+
+bb_install_parts
+  install_part_id                number(22,0)  /nn
+  order_id                       number(22,0)  /nn /fk BB_ORDERS
+  item_description               varchar2(100)  /nn
+  vendor_order_number            varchar2(50) 
+  expected_delivery_date         date 
+  all_parts_received             varchar2(10) 
+  scheduled_install_date         date 
+  installation_date              date 
+  followup_required              varchar2(3) 
+  delivery_progress_notes        varchar2(1000) 
+  install_notes                  varchar2(2000) 
+  actual_delivery_date           date 
+  customer_last_contacted        date 
+  installation_invoice           varchar2(20) 
+  installer_id                   number(22,0) 
+  location_id                    number(22,0) 
+  target_date                    date 
+  hold_date                      date 
+  install_grouping               varchar2(10) 
+  estimated_install_minutes      number(22,0) 
+  event_id                       number(22,0) 
+  vendor_id                      number(22,0)  /nn
+
+bb_inventory_items
+  inventory_item_id              number(22,0) 
+  vendor_id                      number(22,0)  /fk BB_VENDORS
+  item_type                      varchar2(50) 
+  width                          number(22,0) 
+  height                         number(22,0) 
+  fabric_type                    varchar2(15) 
+  fabric_color                   varchar2(15) 
+  description                    varchar2(250) 
+  on_hand_quantity               number(22,0) 
+
+bb_order_files
+  order_id                       number(22,0)  /nn /fk BB_ORDERS
+  file_id                        number(22,0)  /nn /fk BB_FILES
+
+bb_territory_delivery_locs
+  territory_id                   number(22,0)  /nn /fk BB_TERRITORIES
+  location_id                    number(22,0)  /nn /fk BB_DELIVERY_LOCATIONS
+
+bb_territory_installers
+  territory_id                   number(22,0)  /nn /fk BB_TERRITORIES
+  installer_id                   number(22,0)  /nn /fk BB_INSTALLERS
+
+bb_user_installers
+  user_id                        number(22,0)  /nn /fk BB_USERS
+  installer_id                   number(22,0)  /nn /fk BB_INSTALLERS
+
+bb_user_locations
+  user_id                        number(22,0)  /nn /fk BB_USERS
+  location_id                    number(22,0)  /nn /fk BB_DELIVERY_LOCATIONS
+
+bb_user_messages
+  message_id                     number(22,0)  /nn
+  user_id                        number(22,0)  /nn /fk BB_USERS
+  order_id                       number(22,0)  /fk BB_ORDERS
+  install_part_id                number(22,0)  /fk BB_INSTALL_PARTS
+  message                        varchar2(512)  /nn
+  first_view_date                timestamp(7) with local time zone(11) 
+  complete_date                  timestamp(7) with local time zone(11) 
+  created_on                     timestamp(7) with time zone(13) 
+  updated_on                     timestamp(7) with time zone(13) 
+
+bb_calendar_events_err$ [DML Error Logging table for "BB_CALENDAR_EVENTS"]
+  ora_err_number$                number(22,0) 
+  ora_err_mesg$                  varchar2(2000) 
+  ora_err_rowid$                 urowid(4000) 
+  ora_err_optyp$                 varchar2(2) 
+  ora_err_tag$                   varchar2(2000) 
+  event_id                       varchar2(4000) 
+  event_text                     varchar2(32767) 
+  event_date                     varchar2(4000) 
+  event_minutes                  varchar2(4000) 
+  created_on                     varchar2(4000) 
+  updated_on                     varchar2(4000) 
+
+bb_calendar_events_err$1 [DML Error Logging table for "BB_CALENDAR_EVENTS"]
+  ora_err_number$                number(22,0) 
+  ora_err_mesg$                  varchar2(2000) 
+  ora_err_rowid$                 urowid(4000) 
+  ora_err_optyp$                 varchar2(2) 
+  ora_err_tag$                   varchar2(2000) 
+  event_id                       varchar2(4000) 
+  event_text                     varchar2(32767) 
+  event_date                     varchar2(4000) 
+  event_minutes                  varchar2(4000) 
+  created_on                     varchar2(4000) 
+  updated_on                     varchar2(4000) 
+
+bb_orders_err$ [DML Error Logging table for "BB_ORDERS"]
+  ora_err_number$                number(22,0) 
+  ora_err_mesg$                  varchar2(2000) 
+  ora_err_rowid$                 urowid(4000) 
+  ora_err_optyp$                 varchar2(2) 
+  ora_err_tag$                   varchar2(2000) 
+  order_id                       varchar2(4000) 
+  initial_or_followup            varchar2(32767) 
+  client_name                    varchar2(32767) 
+  order_date                     varchar2(4000) 
+  parent_order_id                varchar2(4000) 
+  territory_id                   varchar2(4000) 
+  created_on                     varchar2(4000) 
+  updated_on                     varchar2(4000) 
+  client_phone                   varchar2(32767) 
+  client_address                 varchar2(32767) 
+  client_city                    varchar2(32767) 
+  client_state                   varchar2(32767) 
+  client_zip                     varchar2(32767) 
+  balance_due                    varchar2(4000) 
+  hold_date                      varchar2(4000) 
+  tpt_account_number             varchar2(4000) 
+  tpt_order_number               varchar2(4000) 
+  process_status                 varchar2(32767) 
+  client_email                   varchar2(32767) 
+  gate_code                      varchar2(32767) 
+  sales_person                   varchar2(32767) 
+
+bb_orders_err$1 [DML Error Logging table for "BB_ORDERS"]
+  ora_err_number$                number(22,0) 
+  ora_err_mesg$                  varchar2(2000) 
+  ora_err_rowid$                 urowid(4000) 
+  ora_err_optyp$                 varchar2(2) 
+  ora_err_tag$                   varchar2(2000) 
+  order_id                       varchar2(4000) 
+  initial_or_followup            varchar2(32767) 
+  client_name                    varchar2(32767) 
+  order_date                     varchar2(4000) 
+  parent_order_id                varchar2(4000) 
+  territory_id                   varchar2(4000) 
+  created_on                     varchar2(4000) 
+  updated_on                     varchar2(4000) 
+  client_phone                   varchar2(32767) 
+  client_address                 varchar2(32767) 
+  client_city                    varchar2(32767) 
+  client_state                   varchar2(32767) 
+  client_zip                     varchar2(32767) 
+  balance_due                    varchar2(4000) 
+  hold_date                      varchar2(4000) 
+  tpt_account_number             varchar2(4000) 
+  tpt_order_number               varchar2(4000) 
+  process_status                 varchar2(32767) 
+  client_email                   varchar2(32767) 
+  gate_code                      varchar2(32767) 
+  sales_person                   varchar2(32767) 
+
+bb_user_territory_privs
+  user_id                        number(22,0)  /nn /fk BB_USERS
+  territory_id                   number(22,0)  /nn /fk BB_TERRITORIES
+  priviledge                     varchar2(20) 
