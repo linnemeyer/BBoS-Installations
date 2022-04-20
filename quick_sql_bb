@@ -95,7 +95,7 @@ bb_vendors
 
 bb_audit_columns
   audit_column_id                number(22,0)  /nn
-  audit_id                       number(22,0)  /fk BB_AUDITS /nn
+  audit_id                       number(22,0)  /nn /fk BB_AUDITS
   column_name                    varchar2(50) 
   old_date_value                 date 
   new_date_value                 date 
@@ -108,10 +108,10 @@ bb_commo_log
   log_id                         number(22,0) 
   order_id                       number(22,0)  /fk BB_ORDERS
   user_id                        number(22,0)  /fk BB_USERS
-  log_date                       timestamp(6) with local time zone(11) 
+  log_date                       timestamp(0) with local time zone(7) 
   log_entry                      varchar2(500) 
-  created_on                     timestamp(6) with local time zone(11) 
-  updated_on                     timestamp(6) with local time zone(11) 
+  created_on                     timestamp(0) with local time zone(7) 
+  updated_on                     timestamp(0) with local time zone(7) 
 
 bb_install_parts
   install_part_id                number(22,0)  /nn
@@ -179,89 +179,7 @@ bb_user_messages
   created_on                     timestamp(7) with time zone(13) 
   updated_on                     timestamp(7) with time zone(13) 
 
-bb_calendar_events_err$ [DML Error Logging table for "BB_CALENDAR_EVENTS"]
-  ora_err_number$                number(22,0) 
-  ora_err_mesg$                  varchar2(2000) 
-  ora_err_rowid$                 urowid(4000) 
-  ora_err_optyp$                 varchar2(2) 
-  ora_err_tag$                   varchar2(2000) 
-  event_id                       varchar2(4000) 
-  event_text                     varchar2(32767) 
-  event_date                     varchar2(4000) 
-  event_minutes                  varchar2(4000) 
-  created_on                     varchar2(4000) 
-  updated_on                     varchar2(4000) 
-
-bb_calendar_events_err$1 [DML Error Logging table for "BB_CALENDAR_EVENTS"]
-  ora_err_number$                number(22,0) 
-  ora_err_mesg$                  varchar2(2000) 
-  ora_err_rowid$                 urowid(4000) 
-  ora_err_optyp$                 varchar2(2) 
-  ora_err_tag$                   varchar2(2000) 
-  event_id                       varchar2(4000) 
-  event_text                     varchar2(32767) 
-  event_date                     varchar2(4000) 
-  event_minutes                  varchar2(4000) 
-  created_on                     varchar2(4000) 
-  updated_on                     varchar2(4000) 
-
-bb_orders_err$ [DML Error Logging table for "BB_ORDERS"]
-  ora_err_number$                number(22,0) 
-  ora_err_mesg$                  varchar2(2000) 
-  ora_err_rowid$                 urowid(4000) 
-  ora_err_optyp$                 varchar2(2) 
-  ora_err_tag$                   varchar2(2000) 
-  order_id                       varchar2(4000) 
-  initial_or_followup            varchar2(32767) 
-  client_name                    varchar2(32767) 
-  order_date                     varchar2(4000) 
-  parent_order_id                varchar2(4000) 
-  territory_id                   varchar2(4000) 
-  created_on                     varchar2(4000) 
-  updated_on                     varchar2(4000) 
-  client_phone                   varchar2(32767) 
-  client_address                 varchar2(32767) 
-  client_city                    varchar2(32767) 
-  client_state                   varchar2(32767) 
-  client_zip                     varchar2(32767) 
-  balance_due                    varchar2(4000) 
-  hold_date                      varchar2(4000) 
-  tpt_account_number             varchar2(4000) 
-  tpt_order_number               varchar2(4000) 
-  process_status                 varchar2(32767) 
-  client_email                   varchar2(32767) 
-  gate_code                      varchar2(32767) 
-  sales_person                   varchar2(32767) 
-
-bb_orders_err$1 [DML Error Logging table for "BB_ORDERS"]
-  ora_err_number$                number(22,0) 
-  ora_err_mesg$                  varchar2(2000) 
-  ora_err_rowid$                 urowid(4000) 
-  ora_err_optyp$                 varchar2(2) 
-  ora_err_tag$                   varchar2(2000) 
-  order_id                       varchar2(4000) 
-  initial_or_followup            varchar2(32767) 
-  client_name                    varchar2(32767) 
-  order_date                     varchar2(4000) 
-  parent_order_id                varchar2(4000) 
-  territory_id                   varchar2(4000) 
-  created_on                     varchar2(4000) 
-  updated_on                     varchar2(4000) 
-  client_phone                   varchar2(32767) 
-  client_address                 varchar2(32767) 
-  client_city                    varchar2(32767) 
-  client_state                   varchar2(32767) 
-  client_zip                     varchar2(32767) 
-  balance_due                    varchar2(4000) 
-  hold_date                      varchar2(4000) 
-  tpt_account_number             varchar2(4000) 
-  tpt_order_number               varchar2(4000) 
-  process_status                 varchar2(32767) 
-  client_email                   varchar2(32767) 
-  gate_code                      varchar2(32767) 
-  sales_person                   varchar2(32767) 
-
 bb_user_territory_privs
   user_id                        number(22,0)  /nn /fk BB_USERS
   territory_id                   number(22,0)  /nn /fk BB_TERRITORIES
-  priviledge                     varchar2(20) 
+  priviledge                     varchar2(20)
