@@ -2,6 +2,7 @@ create or replace procedure set_our_product_values
 is
 Begin
 
+--Set the vendor_id based on the vendor name in the quote line.
 update tpt_quote_lines
   set our_vendor_id = 3
 where vendor_name in ('CUSTOM BRANDS GROUP' , 'CUSTOM BRANDS GROUP - ONEHD')
@@ -12,6 +13,7 @@ update tpt_quote_lines
 where vendor_name in ( 'HUNTER DOUGLAS', 'HUNTER DOUGLAS - ONEHD', 'HD N.V. - do not use', 'Hunter Douglas','Hunter Douglas PA','Hunter Douglas Pre Aliance')
   and our_vendor_id is null;
 
+-- our data in TPT has multiple names for Lutron as it was first a my vendor before becoming and alliance vendor.
 update tpt_quote_lines
   set our_vendor_id = 22
 where vendor_name in ( 'LUTRON','LUTRON ELECTRONICS CO., INC.','Lutron Electronics','Lutron Electronics, PA','Lutron Electronics, Pre Alliance','Lutron QS')
