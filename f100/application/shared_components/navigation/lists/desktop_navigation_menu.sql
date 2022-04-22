@@ -1,0 +1,269 @@
+prompt --application/shared_components/navigation/lists/desktop_navigation_menu
+begin
+--   Manifest
+--     LIST: Desktop Navigation Menu
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.5'
+,p_default_workspace_id=>1608381483082323
+,p_default_application_id=>100
+,p_default_id_offset=>336536533326679440
+,p_default_owner=>'BBOSINSTALLS'
+);
+wwv_flow_api.create_list(
+ p_id=>wwv_flow_api.id(16247527481152137900)
+,p_name=>'Desktop Navigation Menu'
+,p_list_status=>'PUBLIC'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(245755906623091578)
+,p_list_item_display_sequence=>1
+,p_list_item_link_text=>'Schedule Now'
+,p_list_item_link_target=>'f?p=&APP_ID.:25:&SESSION.::&DEBUG.::P25_SCROLL_POS:0:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'25'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(28301180744618902)
+,p_list_item_display_sequence=>280
+,p_list_item_link_text=>'Map'
+,p_list_item_link_target=>'f?p=&APP_ID.:50:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-map-markers'
+,p_parent_list_item_id=>wwv_flow_api.id(245755906623091578)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(16247658058430138002)
+,p_list_item_display_sequence=>10
+,p_list_item_link_text=>'Home'
+,p_list_item_link_target=>'f?p=&APP_ID.:1:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-home'
+,p_list_item_disp_cond_type=>'NEVER'
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(16436895819304311913)
+,p_list_item_display_sequence=>30
+,p_list_item_link_text=>'Orders'
+,p_list_item_link_target=>'f?p=&APP_ID.:19:&SESSION.::&DEBUG.::P19_SCROLL_POS:0:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'19'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2598502723852719794)
+,p_list_item_display_sequence=>32
+,p_list_item_link_text=>'Completed'
+,p_list_item_link_target=>'f?p=&APP_ID.:15:&SESSION.::&DEBUG.::P15_SCROLL_POS:0:'
+,p_parent_list_item_id=>wwv_flow_api.id(16436895819304311913)
+,p_list_text_05=>'Crtl+/,C'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'15'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(27507202916047896221)
+,p_list_item_display_sequence=>40
+,p_list_item_link_text=>'Calendar'
+,p_list_item_link_target=>'f?p=&APP_ID.:20:&SESSION.::&DEBUG.::::'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'20,27'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(190111485777877214)
+,p_list_item_display_sequence=>42
+,p_list_item_link_text=>'Expected Deliveries'
+,p_list_item_link_target=>'f?p=&APP_ID.:27:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(27507202916047896221)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'27'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(19128783355588175529)
+,p_list_item_display_sequence=>50
+,p_list_item_link_text=>'Rcv'
+,p_list_item_link_target=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.::::'
+,p_list_item_disp_cond_type=>'NEVER'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'3'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(19374814221748839938)
+,p_list_item_display_sequence=>55
+,p_list_item_link_text=>'Install'
+,p_list_item_link_target=>'f?p=&APP_ID.:9:&SESSION.::&DEBUG.::::'
+,p_list_item_disp_cond_type=>'NEVER'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'9'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(156906830874475555)
+,p_list_item_display_sequence=>60
+,p_list_item_link_text=>'Reports'
+,p_list_item_link_target=>'f?p=&APP_ID.:39:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-bar-chart'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'37,39'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(9472122746179477)
+,p_list_item_display_sequence=>61
+,p_list_item_link_text=>'Quick Messages'
+,p_list_item_link_target=>'f?p=&APP_ID.:60:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(156906830874475555)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'60'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(156890987882244560)
+,p_list_item_display_sequence=>62
+,p_list_item_link_text=>'Average Delivery Times'
+,p_list_item_link_target=>'f?p=&APP_ID.:37:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(156906830874475555)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'37'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(156899117493388128)
+,p_list_item_display_sequence=>63
+,p_list_item_link_text=>'Average Delivery Days Graph'
+,p_list_item_link_target=>'f?p=&APP_ID.:39:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(156906830874475555)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'39'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(16247748466717138248)
+,p_list_item_display_sequence=>100
+,p_list_item_link_text=>'Administration'
+,p_list_item_link_target=>'f?p=&APP_ID.:10000:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-user-wrench'
+,p_security_scheme=>wwv_flow_api.id(16247650532368137989)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'5,11,18,10000,18,23,26,31,32,34,36,500,40,41,42'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(26820038417947626)
+,p_list_item_display_sequence=>101
+,p_list_item_link_text=>'Load Data from Touch Point'
+,p_list_item_link_target=>'f?p=&APP_ID.:42:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-cloud-upload'
+,p_parent_list_item_id=>wwv_flow_api.id(16247748466717138248)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'42'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(157200134932161561)
+,p_list_item_display_sequence=>110
+,p_list_item_link_text=>'Mainenance'
+,p_list_item_icon=>'fa-database-wrench'
+,p_parent_list_item_id=>wwv_flow_api.id(16247748466717138248)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(134461223493091032)
+,p_list_item_display_sequence=>111
+,p_list_item_link_text=>'Table Maintenance'
+,p_list_item_link_target=>'f?p=&APP_ID.:10000:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(157200134932161561)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(134468007874102391)
+,p_list_item_display_sequence=>112
+,p_list_item_link_text=>'Vendors'
+,p_list_item_link_target=>'f?p=&APP_ID.:34:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(134461223493091032)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'34,35'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(134347361078826921)
+,p_list_item_display_sequence=>113
+,p_list_item_link_text=>'Installers'
+,p_list_item_link_target=>'f?p=&APP_ID.:32:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(134461223493091032)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'32,33'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2560699930105549277)
+,p_list_item_display_sequence=>115
+,p_list_item_link_text=>'User Management'
+,p_list_item_link_target=>'f?p=&APP_ID.:11:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(157200134932161561)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'11,12'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(151968450059969895)
+,p_list_item_display_sequence=>120
+,p_list_item_link_text=>'Remove Dup Order Imports'
+,p_list_item_link_target=>'f?p=&APP_ID.:36:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(157200134932161561)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'36'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(157910869085461825)
+,p_list_item_display_sequence=>200
+,p_list_item_link_text=>'Activity Management'
+,p_list_item_link_target=>'f?p=&APP_ID.:10010:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(16247748466717138248)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(167575355889538324)
+,p_list_item_display_sequence=>210
+,p_list_item_link_text=>'STUFF on Hand'
+,p_list_item_link_target=>'f?p=&APP_ID.:29:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(16247748466717138248)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'29,30'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(157911147294463713)
+,p_list_item_display_sequence=>220
+,p_list_item_link_text=>'Feedback'
+,p_list_item_link_target=>'f?p=&APP_ID.:10100:&SESSION.::&DEBUG.::::'
+,p_parent_list_item_id=>wwv_flow_api.id(16247748466717138248)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(177197999220503385)
+,p_list_item_display_sequence=>230
+,p_list_item_link_text=>'All Install Parts'
+,p_list_item_link_target=>'f?p=&APP_ID.:31:&APP_SESSION.::&DEBUG.:::'
+,p_parent_list_item_id=>wwv_flow_api.id(16247748466717138248)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'31'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(273022944781075858)
+,p_list_item_display_sequence=>240
+,p_list_item_link_text=>'Communications Log'
+,p_list_item_link_target=>'f?p=&APP_ID.:26:&SESSION.::&DEBUG.'
+,p_parent_list_item_id=>wwv_flow_api.id(16247748466717138248)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'26'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(214758705081356193)
+,p_list_item_display_sequence=>260
+,p_list_item_link_text=>'Install Invoice Reconcile'
+,p_list_item_link_target=>'f?p=&APP_ID.:23:&SESSION.::&DEBUG.'
+,p_parent_list_item_id=>wwv_flow_api.id(16247748466717138248)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'23'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(65945633238474177)
+,p_list_item_display_sequence=>270
+,p_list_item_link_text=>'Audit Log'
+,p_list_item_link_target=>'f?p=&APP_ID.:500:&SESSION.::&DEBUG.:500:::'
+,p_parent_list_item_id=>wwv_flow_api.id(16247748466717138248)
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'500'
+);
+wwv_flow_api.component_end;
+end;
+/

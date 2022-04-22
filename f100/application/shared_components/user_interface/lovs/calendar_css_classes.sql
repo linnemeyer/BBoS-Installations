@@ -1,0 +1,106 @@
+prompt --application/shared_components/user_interface/lovs/calendar_css_classes
+begin
+--   Manifest
+--     CALENDAR CSS CLASSES
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.5'
+,p_default_workspace_id=>1608381483082323
+,p_default_application_id=>100
+,p_default_id_offset=>336536533326679440
+,p_default_owner=>'BBOSINSTALLS'
+);
+wwv_flow_api.create_list_of_values(
+ p_id=>wwv_flow_api.id(134348845533843193)
+,p_lov_name=>'CALENDAR CSS CLASSES'
+,p_lov_query=>'.'||wwv_flow_api.id(134348845533843193)||'.'
+,p_location=>'STATIC'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134349155371843194)
+,p_lov_disp_sequence=>1
+,p_lov_disp_value=>'apex-cal-red'
+,p_lov_return_value=>'apex-cal-red'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134349575050843194)
+,p_lov_disp_sequence=>2
+,p_lov_disp_value=>'apex-cal-cyan'
+,p_lov_return_value=>'apex-cal-cyan'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134349949648843194)
+,p_lov_disp_sequence=>3
+,p_lov_disp_value=>'apex-cal-blue'
+,p_lov_return_value=>'apex-cal-blue'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134350339930843194)
+,p_lov_disp_sequence=>4
+,p_lov_disp_value=>'apex-cal-bluesky'
+,p_lov_return_value=>'apex-cal-bluesky'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134350755656843195)
+,p_lov_disp_sequence=>5
+,p_lov_disp_value=>'apex-cal-darkblue'
+,p_lov_return_value=>'apex-cal-darkblue'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134351156070843195)
+,p_lov_disp_sequence=>6
+,p_lov_disp_value=>'apex-cal-green'
+,p_lov_return_value=>'apex-cal-green'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134351571742843195)
+,p_lov_disp_sequence=>7
+,p_lov_disp_value=>'apex-cal-yellow'
+,p_lov_return_value=>'apex-cal-yellow'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134351988876843195)
+,p_lov_disp_sequence=>8
+,p_lov_disp_value=>'apex-cal-silver'
+,p_lov_return_value=>'apex-cal-silver'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134352314735843195)
+,p_lov_disp_sequence=>9
+,p_lov_disp_value=>'apex-cal-brown'
+,p_lov_return_value=>'apex-cal-brown'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134352768868843195)
+,p_lov_disp_sequence=>10
+,p_lov_disp_value=>'apex-cal-lime'
+,p_lov_return_value=>'apex-cal-lime'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134353133454843196)
+,p_lov_disp_sequence=>11
+,p_lov_disp_value=>'apex-cal-white'
+,p_lov_return_value=>'apex-cal-white'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134353595367843196)
+,p_lov_disp_sequence=>12
+,p_lov_disp_value=>'apex-cal-gray'
+,p_lov_return_value=>'apex-cal-gray'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134353940473843196)
+,p_lov_disp_sequence=>13
+,p_lov_disp_value=>'apex-cal-black'
+,p_lov_return_value=>'apex-cal-black'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(134354324302843196)
+,p_lov_disp_sequence=>14
+,p_lov_disp_value=>'apex-cal-orange'
+,p_lov_return_value=>'apex-cal-orange'
+);
+wwv_flow_api.component_end;
+end;
+/

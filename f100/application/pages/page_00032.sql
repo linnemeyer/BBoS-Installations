@@ -1,0 +1,107 @@
+prompt --application/pages/page_00032
+begin
+--   Manifest
+--     PAGE: 00032
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.5'
+,p_default_workspace_id=>1608381483082323
+,p_default_application_id=>100
+,p_default_id_offset=>336536533326679440
+,p_default_owner=>'BBOSINSTALLS'
+);
+wwv_flow_api.create_page(
+ p_id=>32
+,p_user_interface_id=>wwv_flow_api.id(16247647600803137983)
+,p_name=>'Installers'
+,p_alias=>'INSTALLERS'
+,p_step_title=>'Installers'
+,p_autocomplete_on_off=>'OFF'
+,p_group_id=>wwv_flow_api.id(16247651097089137992)
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_last_updated_by=>'LARRY'
+,p_last_upd_yyyymmddhh24miss=>'20211016185232'
+);
+wwv_flow_api.create_report_region(
+ p_id=>wwv_flow_api.id(134345722616826914)
+,p_name=>'Installers'
+,p_template=>wwv_flow_api.id(16247573660091137931)
+,p_display_sequence=>10
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#'
+,p_source_type=>'NATIVE_SQL_REPORT'
+,p_query_type=>'TABLE'
+,p_query_table=>'BB_INSTALLERS'
+,p_include_rowid_column=>false
+,p_ajax_enabled=>'Y'
+,p_lazy_loading=>false
+,p_query_row_template=>wwv_flow_api.id(16247597883133137946)
+,p_query_num_rows=>15
+,p_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_csv_output=>'Y'
+,p_csv_output_link_text=>'Download'
+,p_prn_output=>'N'
+,p_sort_null=>'L'
+,p_plug_query_strip_html=>'N'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(134346189957826914)
+,p_query_column_id=>1
+,p_column_alias=>'INSTALLER_ID'
+,p_column_display_sequence=>1
+,p_column_link=>'f?p=&APP_ID.:33:&SESSION.::&DEBUG.:RP:P33_INSTALLER_ID:\#INSTALLER_ID#\'
+,p_column_linktext=>'<span aria-label="Edit"><span class="fa fa-edit" aria-hidden="true" title="Edit"></span></span>'
+,p_disable_sort_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(134346578357826915)
+,p_query_column_id=>2
+,p_column_alias=>'INSTALLER'
+,p_column_display_sequence=>2
+,p_column_heading=>'Installer'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(134346948347826915)
+,p_query_column_id=>3
+,p_column_alias=>'CALENDAR_CSS'
+,p_column_display_sequence=>3
+,p_column_heading=>'Calendar Css'
+,p_heading_alignment=>'LEFT'
+,p_disable_sort_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_report_columns(
+ p_id=>wwv_flow_api.id(121738605650339448)
+,p_query_column_id=>4
+,p_column_alias=>'INACTIVE'
+,p_column_display_sequence=>13
+,p_column_heading=>'Inactive'
+,p_use_as_row_header=>'N'
+,p_disable_sort_column=>'N'
+,p_derived_column=>'N'
+,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(134348501286826922)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_api.id(134345722616826914)
+,p_button_name=>'CREATE'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(16247625762670137965)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Create'
+,p_button_position=>'EDIT'
+,p_button_redirect_url=>'f?p=&APP_ID.:33:&SESSION.::&DEBUG.:33'
+);
+wwv_flow_api.component_end;
+end;
+/

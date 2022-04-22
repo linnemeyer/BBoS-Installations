@@ -1,0 +1,81 @@
+prompt --application/shared_components/data_profiles/mapquest
+begin
+--   Manifest
+--     DATA PROFILE: MapQuest
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.5'
+,p_default_workspace_id=>1608381483082323
+,p_default_application_id=>100
+,p_default_id_offset=>336536533326679440
+,p_default_owner=>'BBOSINSTALLS'
+);
+wwv_flow_api.create_data_profile(
+ p_id=>wwv_flow_api.id(28233680028293587)
+,p_name=>'MapQuest'
+,p_format=>'JSON'
+,p_row_selector=>'results'
+);
+wwv_flow_api.create_data_profile_col(
+ p_id=>wwv_flow_api.id(28233936948293587)
+,p_data_profile_id=>wwv_flow_api.id(28233680028293587)
+,p_name=>'STREET'
+,p_sequence=>1
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>false
+,p_selector=>'locations.street'
+);
+wwv_flow_api.create_data_profile_col(
+ p_id=>wwv_flow_api.id(28239535392705992)
+,p_data_profile_id=>wwv_flow_api.id(28233680028293587)
+,p_name=>'LATLNG_LAT'
+,p_sequence=>11
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>true
+,p_is_filterable=>false
+,p_selector=>'locations.latLng.lat'
+);
+wwv_flow_api.create_data_profile_col(
+ p_id=>wwv_flow_api.id(28239906097710136)
+,p_data_profile_id=>wwv_flow_api.id(28233680028293587)
+,p_name=>'LATLNG_LNG'
+,p_sequence=>21
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>true
+,p_is_filterable=>false
+,p_selector=>'locations.latLng.lng'
+);
+wwv_flow_api.create_data_profile_col(
+ p_id=>wwv_flow_api.id(28240306117721203)
+,p_data_profile_id=>wwv_flow_api.id(28233680028293587)
+,p_name=>'DISPLAYLATLNG_LAT'
+,p_sequence=>31
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>true
+,p_is_filterable=>false
+,p_selector=>'locations.displayLatLng.lat'
+);
+wwv_flow_api.create_data_profile_col(
+ p_id=>wwv_flow_api.id(28240678592727566)
+,p_data_profile_id=>wwv_flow_api.id(28233680028293587)
+,p_name=>'DISPLAYLATLNG_LNG'
+,p_sequence=>41
+,p_column_type=>'DATA'
+,p_data_type=>'VARCHAR2'
+,p_max_length=>4000
+,p_has_time_zone=>true
+,p_is_filterable=>false
+,p_selector=>'locations.displayLatLng.lng'
+);
+wwv_flow_api.component_end;
+end;
+/
