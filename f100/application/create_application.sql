@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_api.component_begin (
  p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.5'
+,p_release=>'21.2.6'
 ,p_default_workspace_id=>1608381483082323
 ,p_default_application_id=>100
 ,p_default_id_offset=>336536533326679440
@@ -60,7 +60,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'BB Installs'
 ,p_last_updated_by=>'LARRY'
-,p_last_upd_yyyymmddhh24miss=>'20220422003942'
+,p_last_upd_yyyymmddhh24miss=>'20220518213041'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>5
 ,p_ui_type_name => null

@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_api.component_begin (
  p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.5'
+,p_release=>'21.2.6'
 ,p_default_workspace_id=>1608381483082323
 ,p_default_application_id=>100
 ,p_default_id_offset=>336536533326679440
@@ -20,11 +20,11 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'LARRY'
-,p_last_upd_yyyymmddhh24miss=>'20211016185232'
+,p_last_upd_yyyymmddhh24miss=>'20220427222332'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(172846411974851902)
-,p_name=>'Report 1'
+,p_name=>'Other Orders'
 ,p_template=>wwv_flow_api.id(16247573660091137931)
 ,p_display_sequence=>10
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
@@ -75,6 +75,8 @@ wwv_flow_api.create_report_columns(
 ,p_column_display_sequence=>2
 ,p_column_heading=>'Order Id'
 ,p_use_as_row_header=>'N'
+,p_column_link=>'f?p=&APP_ID.:6:&SESSION.::&DEBUG.::P6_ORDER_ID,P6_RETURN_PAGE:#ORDER_ID#,28'
+,p_column_linktext=>'#ORDER_ID#'
 ,p_heading_alignment=>'LEFT'
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'

@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_api.component_begin (
  p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.5'
+,p_release=>'21.2.6'
 ,p_default_workspace_id=>1608381483082323
 ,p_default_application_id=>100
 ,p_default_id_offset=>336536533326679440
@@ -21,7 +21,7 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'LARRY'
-,p_last_upd_yyyymmddhh24miss=>'20220412194620'
+,p_last_upd_yyyymmddhh24miss=>'20220518212522'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(270214950990572262)
@@ -825,18 +825,11 @@ wwv_flow_api.create_page_item(
 ,p_item_plug_id=>wwv_flow_api.id(16438080198889896046)
 ,p_use_cache_before_default=>'NO'
 ,p_item_default=>'No'
-,p_prompt=>'Followup Required'
 ,p_source=>'FOLLOWUP_REQUIRED'
 ,p_source_type=>'DB_COLUMN'
-,p_display_as=>'NATIVE_YES_NO'
-,p_field_template=>wwv_flow_api.id(16247625219456137964)
-,p_item_template_options=>'#DEFAULT#'
+,p_display_as=>'NATIVE_HIDDEN'
 ,p_encrypt_session_state_yn=>'N'
-,p_attribute_01=>'N'
-,p_attribute_02=>'Yes'
-,p_attribute_03=>'Yes'
-,p_attribute_04=>'No'
-,p_attribute_05=>'No'
+,p_attribute_01=>'Y'
 );
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(16438088433589896167)
@@ -1004,7 +997,7 @@ end;
 begin
 wwv_flow_api.component_begin (
  p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.5'
+,p_release=>'21.2.6'
 ,p_default_workspace_id=>1608381483082323
 ,p_default_application_id=>100
 ,p_default_id_offset=>336536533326679440

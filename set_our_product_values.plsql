@@ -146,6 +146,12 @@ update tpt_quote_lines
  where our_vendor_id = 6
    and our_description is null;
 
+-- CUSTOM BRANDS GROUP
+update tpt_quote_lines
+   set our_description = initcap(product_name)
+ where our_vendor_id = 3
+   and our_description is null;
+
 --LUTRON
 update tpt_quote_lines
    set our_description = 'Pico Adapter'
@@ -431,4 +437,25 @@ update tpt_quote_lines
    set our_description = initcap(product_name)
  where our_vendor_id = 10
    and our_description is null;
+
+-- The Screen Company
+update tpt_quote_lines
+   set our_description = 'Solar Sun Screen'
+ where our_vendor_id = 218
+   and our_description is null  
+   and product_name = 'Window Coverings' 
+   and instr(description, 'Solar Sun Screen') > 0;
+
+update tpt_quote_lines
+   set our_description = 'Bug Screen'
+ where our_vendor_id = 218
+   and our_description is null  
+   and product_name = 'Window Coverings' 
+   and instr(description, 'Bug Screen') > 0;
+
+update tpt_quote_lines
+   set our_description = initcap(product_name)
+ where our_vendor_id = 218
+   and our_description is null;
+
 end;

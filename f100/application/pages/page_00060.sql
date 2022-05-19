@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_api.component_begin (
  p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.5'
+,p_release=>'21.2.6'
 ,p_default_workspace_id=>1608381483082323
 ,p_default_application_id=>100
 ,p_default_id_offset=>336536533326679440
@@ -21,17 +21,22 @@ wwv_flow_api.create_page(
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
 ,p_last_updated_by=>'LARRY'
-,p_last_upd_yyyymmddhh24miss=>'20220412022107'
+,p_last_upd_yyyymmddhh24miss=>'20220509195648'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(31986953407858365)
 ,p_plug_name=>'Messages'
 ,p_region_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_api.id(16247572498510137930)
-,p_plug_display_sequence=>10
+,p_plug_display_sequence=>20
 ,p_query_type=>'TABLE'
 ,p_query_table=>'BB_USER_MESSAGES'
-,p_query_where=>'user_id =  :G_USER_ID'
+,p_query_where=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'user_id =  :G_USER_ID',
+'or ',
+'(',
+'  nvl(:P60_ALL, ''Just Me'') = ''All''',
+'  and :G_USER_ID = 1 )'))
 ,p_include_rowid_column=>false
 ,p_plug_source_type=>'NATIVE_IR'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
@@ -241,6 +246,34 @@ wwv_flow_api.create_page_button(
 ,p_button_image_alt=>'Create'
 ,p_button_position=>'TOP_AND_BOTTOM'
 ,p_button_redirect_url=>'f?p=&APP_ID.:62:&SESSION.::&DEBUG.:62'
+);
+wwv_flow_api.create_page_branch(
+ p_id=>wwv_flow_api.id(14388641606069119)
+,p_branch_action=>'f?p=&APP_ID.:60:&SESSION.::&DEBUG.:::&success_msg=#SUCCESS_MSG#'
+,p_branch_point=>'BEFORE_PROCESSING'
+,p_branch_type=>'REDIRECT_URL'
+,p_branch_sequence=>10
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(14388519621069118)
+,p_name=>'P60_ALL'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(31986953407858365)
+,p_item_default=>'Just Me'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_lov=>'STATIC:All;All,Just Me;Just Me'
+,p_lov_display_null=>'YES'
+,p_cHeight=>1
+,p_begin_on_new_line=>'N'
+,p_begin_on_new_field=>'N'
+,p_display_when=>':G_USER_ID = 1'
+,p_display_when2=>'PLSQL'
+,p_display_when_type=>'EXPRESSION'
+,p_field_template=>wwv_flow_api.id(16247625219456137964)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_attribute_01=>'SUBMIT'
+,p_attribute_03=>'Y'
 );
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(31987311710858366)

@@ -5,7 +5,7 @@ begin
 --   Manifest End
 wwv_flow_api.component_begin (
  p_version_yyyy_mm_dd=>'2021.10.15'
-,p_release=>'21.2.5'
+,p_release=>'21.2.6'
 ,p_default_workspace_id=>1608381483082323
 ,p_default_application_id=>100
 ,p_default_id_offset=>336536533326679440
@@ -81,7 +81,7 @@ wwv_flow_api.create_page(
 '}'))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'LARRY'
-,p_last_upd_yyyymmddhh24miss=>'20220414231718'
+,p_last_upd_yyyymmddhh24miss=>'20220505170008'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(28243362496745493)
@@ -303,7 +303,7 @@ wwv_flow_api.create_map_region_layer(
 '    , di.order_id',
 '    , di.scheduled_install_date, di.installation_date',
 '    , (di.scheduled_install_date+((bb_install_length(di.order_id, di.scheduled_install_date))/60/24)) install_end_date     ',
-'    , ''Flag Pennant'' shape, ''blue''  color, ''fa-flag-pennant'' icon, 1.5 scale',
+'    , ''Flag Pennant'' shape, ''orangered''  color, ''fa-flag-pennant'' icon, 1.5 scale',
 '  from daily_installs di )whl,  bb_orders georder',
 '  where whl.order_id = georder.order_id'))
 ,p_has_spatial_index=>false
